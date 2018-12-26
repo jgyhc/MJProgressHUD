@@ -44,4 +44,12 @@
 
 - (void)hide;
 
+
+/** 背景视图 */
+@property (nonatomic, strong) UIView *backView;
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+
 @end

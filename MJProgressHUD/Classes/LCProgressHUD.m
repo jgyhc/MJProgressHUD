@@ -16,22 +16,13 @@
 
 #define LCHUD_BACKGROUND_COLOR	[UIColor colorWithRed:0.37 green:0.37 blue:0.37 alpha:0.7]
 
-#define HUD_WINDOW_COLOR		[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2]
-
 #define HUD_TITLE_COLOR [UIColor whiteColor]
 
 @interface LCProgressHUD ()
 
-/** 背景视图 */
-@property (nonatomic, strong) UIView *backView;
-
 @property (nonatomic, strong) UIView *superView;
 
-@property (nonatomic, retain) UIActivityIndicatorView *spinner;
-
 @property (nonatomic, assign) BOOL isShow;
-
-@property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, weak) NSTimer *minShowTimer;
 
@@ -72,6 +63,7 @@
         CGFloat width = rect.size.width > 57 ? rect.size.width + 20 : 77;
         CGFloat height = rect.size.height + 20 + 47;
         self.backView.bounds = CGRectMake(0, 0, width, height);
+        [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
         self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
         self.spinner.center = CGPointMake(width / 2, 28.5);
         self.titleLabel.bounds = CGRectMake(0, 0, width, 20);
@@ -105,6 +97,7 @@
     _titleLabel = nil;
     CGSize size = CGSizeMake(77, 77);
     self.backView.bounds = CGRectMake(0, 0, size.width, size.height);
+    [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
     self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
     self.spinner.center = CGPointMake(size.width / 2, size.height / 2);
     [_backView addSubview:self.spinner];
@@ -134,6 +127,7 @@
         CGRect rect = [self getRectWithContent:content];
         CGSize size = CGSizeMake(rect.size.width + 20, rect.size.height + 20);
         self.backView.bounds = CGRectMake(0, 0, size.width, size.height);
+        [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
         self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
         self.titleLabel.frame = CGRectMake(10, 10, rect.size.width, rect.size.height);
         self.titleLabel.text = content;
@@ -223,7 +217,6 @@
 - (UIView *)backView {
     if (!_backView) {
         _backView = [[UIView alloc] init];
-        [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
         _backView.layer.cornerRadius = HUD_BACKVIEW_CORNERRADIUS;
         [self addSubview:_backView];
     }
