@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - MJProgressHUD (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - MJProgressHUD (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  MJProgressHUD:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  MJProgressHUD: 978781c9227073b7a625359e8158fbc4c85a5fc9
+
+PODFILE CHECKSUM: 3933221cb4cae901732c9b30aa7557450973acee
+
+COCOAPODS: 1.5.3

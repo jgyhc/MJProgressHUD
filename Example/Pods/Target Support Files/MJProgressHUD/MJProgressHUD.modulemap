@@ -1,0 +1,6 @@
+framework module MJProgressHUD {
+  umbrella header "MJProgressHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
