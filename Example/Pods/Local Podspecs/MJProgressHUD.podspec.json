@@ -1,6 +1,6 @@
 {
   "name": "MJProgressHUD",
-  "version": "0.1.0",
+  "version": "1.0",
   "summary": "An extremely simple ProgressHUD.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/jgyhc/MJProgressHUD",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/jgyhc/MJProgressHUD.git",
-    "tag": "0.1.0"
+    "tag": "1.0"
   },
   "platforms": {
     "ios": "8.0"

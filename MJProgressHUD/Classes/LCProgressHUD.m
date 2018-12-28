@@ -58,22 +58,24 @@
 
 - (void)showLoadingWithView:(UIView *)view content:(NSString *)content {
     _superView = view;
-    if ([content isKindOfClass:[NSString class]] && content.length > 0) {
-        CGRect rect = [self getRectWithContent:content];
-        CGFloat width = rect.size.width > 57 ? rect.size.width + 20 : 77;
-        CGFloat height = rect.size.height + 20 + 47;
-        self.backView.bounds = CGRectMake(0, 0, width, height);
-        [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
-        self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
-        self.spinner.center = CGPointMake(width / 2, 28.5);
-        self.titleLabel.bounds = CGRectMake(0, 0, width, 20);
-        self.titleLabel.center = CGPointMake(width / 2, height - 22);
-        _titleLabel.numberOfLines = 1;
-        _titleLabel.text = content;
-        [_backView addSubview:self.spinner];
-        [_backView addSubview:self.titleLabel];
-        [self.spinner startAnimating];
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        [self showLoadingWithView:view];
+        return;
     }
+    CGRect rect = [self getRectWithContent:content];
+    CGFloat width = rect.size.width > 57 ? rect.size.width + 20 : 77;
+    CGFloat height = rect.size.height + 20 + 47;
+    self.backView.bounds = CGRectMake(0, 0, width, height);
+    [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
+    self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
+    self.spinner.center = CGPointMake(width / 2, 28.5);
+    self.titleLabel.bounds = CGRectMake(0, 0, width, 20);
+    self.titleLabel.center = CGPointMake(width / 2, height - 22);
+    _titleLabel.numberOfLines = 1;
+    _titleLabel.text = content;
+    [_backView addSubview:self.spinner];
+    [_backView addSubview:self.titleLabel];
+    [self.spinner startAnimating];
     [self show];
 }
 
@@ -121,17 +123,19 @@
 }
 
 - (void)showWithView:(UIView *)view content:(NSString *)content {
+    if (![content isKindOfClass:[NSString class]] || content.length == 0) {
+        return;
+    }
     _superView = view;
     [self.backView addSubview:self.titleLabel];
-    if ([content isKindOfClass:[NSString class]] && content.length > 0) {
-        CGRect rect = [self getRectWithContent:content];
-        CGSize size = CGSizeMake(rect.size.width + 20, rect.size.height + 20);
-        self.backView.bounds = CGRectMake(0, 0, size.width, size.height);
-        [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
-        self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
-        self.titleLabel.frame = CGRectMake(10, 10, rect.size.width, rect.size.height);
-        self.titleLabel.text = content;
-    }
+    _titleLabel.numberOfLines = 0;
+    CGRect rect = [self getRectWithContent:content];
+    CGSize size = CGSizeMake(rect.size.width + 20, rect.size.height + 20);
+    self.backView.bounds = CGRectMake(0, 0, size.width, size.height);
+    [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
+    self.backView.center = CGPointMake(CGRectGetWidth(view.bounds) / 2, CGRectGetHeight(view.bounds) / 2);
+    self.titleLabel.frame = CGRectMake(10, 10, rect.size.width, rect.size.height);
+    self.titleLabel.text = content;
     [_spinner removeFromSuperview];
     _spinner = nil;
     [self initializeTime];

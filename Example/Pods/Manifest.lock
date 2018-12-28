@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - MJProgressHUD (0.1.0)
+  - MJProgressHUD (1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MJProgressHUD: 978781c9227073b7a625359e8158fbc4c85a5fc9
+  MJProgressHUD: 5e1b8b07a89bbe0107e170bb80c60d170b5d7721
 
 PODFILE CHECKSUM: 3933221cb4cae901732c9b30aa7557450973acee
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,74 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-GC-uP5">
+                                <rect key="frame" x="123" y="100" width="129" height="30"/>
+                                <state key="normal" title="window上展示文本"/>
+                                <connections>
+                                    <action selector="showText:" destination="whP-gf-Uak" eventType="touchUpInside" id="baP-70-C3X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLA-gg-8LG">
+                                <rect key="frame" x="132.5" y="160" width="110" height="30"/>
+                                <state key="normal" title="View上展示文本"/>
+                                <connections>
+                                    <action selector="viewShowText:" destination="whP-gf-Uak" eventType="touchUpInside" id="EVg-0h-8Up"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUF-V9-oOh">
+                                <rect key="frame" x="107.5" y="220" width="160" height="30"/>
+                                <state key="normal" title="window展示活动控制器"/>
+                                <connections>
+                                    <action selector="ShowActivity:" destination="whP-gf-Uak" eventType="touchUpInside" id="A3h-Rn-mmQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVy-eM-E1V">
+                                <rect key="frame" x="117" y="280" width="141" height="30"/>
+                                <state key="normal" title="View展示活动控制器"/>
+                                <connections>
+                                    <action selector="viewShowActivity:" destination="whP-gf-Uak" eventType="touchUpInside" id="d3g-QM-DQA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXZ-ng-Nn3">
+                                <rect key="frame" x="100" y="340" width="175" height="30"/>
+                                <state key="normal" title="window展示指示器加文本"/>
+                                <connections>
+                                    <action selector="showContentAndActivity:" destination="whP-gf-Uak" eventType="touchUpInside" id="NVa-c0-rkj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-h1-hCW">
+                                <rect key="frame" x="110.5" y="400" width="154" height="30"/>
+                                <state key="normal" title="view展示指示器加文本"/>
+                                <connections>
+                                    <action selector="viewShowContentAndActivity:" destination="whP-gf-Uak" eventType="touchUpInside" id="uqd-49-h6x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xl-F4-0B3">
+                                <rect key="frame" x="172.5" y="460" width="30" height="30"/>
+                                <state key="normal" title="hide"/>
+                                <connections>
+                                    <action selector="hide:" destination="whP-gf-Uak" eventType="touchUpInside" id="msn-Jg-Ftg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LVy-eM-E1V" firstAttribute="top" secondItem="JUF-V9-oOh" secondAttribute="bottom" constant="30" id="5AD-0f-byI"/>
+                            <constraint firstItem="FJz-GC-uP5" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="8Qh-43-IVs"/>
+                            <constraint firstItem="6xl-F4-0B3" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="9us-w5-QEs"/>
+                            <constraint firstItem="NqV-h1-hCW" firstAttribute="top" secondItem="CXZ-ng-Nn3" secondAttribute="bottom" constant="30" id="AzW-Rb-qk4"/>
+                            <constraint firstItem="JUF-V9-oOh" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="EK8-a5-L3T"/>
+                            <constraint firstItem="NqV-h1-hCW" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="HCI-59-ibZ"/>
+                            <constraint firstItem="6xl-F4-0B3" firstAttribute="top" secondItem="NqV-h1-hCW" secondAttribute="bottom" constant="30" id="JT2-cv-FXb"/>
+                            <constraint firstItem="JUF-V9-oOh" firstAttribute="top" secondItem="rLA-gg-8LG" secondAttribute="bottom" constant="30" id="R7d-Ea-Uwr"/>
+                            <constraint firstItem="LVy-eM-E1V" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VmU-Bc-KyL"/>
+                            <constraint firstItem="CXZ-ng-Nn3" firstAttribute="top" secondItem="LVy-eM-E1V" secondAttribute="bottom" constant="30" id="fjS-XE-B3I"/>
+                            <constraint firstItem="FJz-GC-uP5" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="80" id="hrV-no-Xs2"/>
+                            <constraint firstItem="rLA-gg-8LG" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="jgg-VS-QU0"/>
+                            <constraint firstItem="CXZ-ng-Nn3" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="omg-QS-gpo"/>
+                            <constraint firstItem="rLA-gg-8LG" firstAttribute="top" secondItem="FJz-GC-uP5" secondAttribute="bottom" constant="30" id="xtU-NC-Cl3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>

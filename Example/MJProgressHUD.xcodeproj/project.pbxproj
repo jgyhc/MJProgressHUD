@@ -248,6 +248,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = jgyhc;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 7224X3X442;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -504,6 +507,7 @@
 			baseConfigurationReference = 3A30116AABC58FE45DD10FD9 /* Pods-MJProgressHUD_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7224X3X442;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJProgressHUD/MJProgressHUD-Prefix.pch";
 				INFOPLIST_FILE = "MJProgressHUD/MJProgressHUD-Info.plist";
@@ -519,6 +523,7 @@
 			baseConfigurationReference = CA9A66C3F5531EAC06B4C5C7 /* Pods-MJProgressHUD_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7224X3X442;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJProgressHUD/MJProgressHUD-Prefix.pch";
 				INFOPLIST_FILE = "MJProgressHUD/MJProgressHUD-Info.plist";
