@@ -62,6 +62,7 @@
         [self showLoadingWithView:view];
         return;
     }
+    [self.backView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     CGRect rect = [self getRectWithContent:content];
     CGFloat width = rect.size.width > 57 ? rect.size.width + 20 : 77;
     CGFloat height = rect.size.height + 20 + 47;
@@ -95,8 +96,7 @@
 
 - (void)showLoadingWithView:(UIView *)view {
     _superView = view;
-    [_titleLabel removeFromSuperview];
-    _titleLabel = nil;
+    [self.backView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     CGSize size = CGSizeMake(77, 77);
     self.backView.bounds = CGRectMake(0, 0, size.width, size.height);
     [_backView setBackgroundColor:LCHUD_BACKGROUND_COLOR];
@@ -127,6 +127,7 @@
         return;
     }
     _superView = view;
+    [self.backView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.backView addSubview:self.titleLabel];
     _titleLabel.numberOfLines = 0;
     CGRect rect = [self getRectWithContent:content];
